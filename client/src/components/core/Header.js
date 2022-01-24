@@ -15,6 +15,15 @@ export default function Header({ setQuery }) {
     }
   };
 
+  const enterHandler = (e) => {
+    if (e.code === "Enter") {
+      if (input === "") return setError("Please Fill Input Before Searching!");
+
+      setError("");
+      setQuery(input);
+    }
+  };
+
   return (
     <div>
       <div className="header">
@@ -30,6 +39,7 @@ export default function Header({ setQuery }) {
               className="form-control"
               placeholder="search..."
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={enterHandler}
             />
             <div className="input-group-append">
               <button
