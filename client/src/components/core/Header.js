@@ -12,6 +12,7 @@ export default function Header({ setQuery }) {
     } else {
       setError("");
       setQuery(input);
+      localStorage.removeItem("q");
     }
   };
 
@@ -21,6 +22,7 @@ export default function Header({ setQuery }) {
 
       setError("");
       setQuery(input);
+      localStorage.removeItem("q");
     }
   };
 

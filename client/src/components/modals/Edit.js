@@ -40,7 +40,7 @@ export default function Edit({ selected, closeModals, setQuery, query }) {
     } else {
       let newMovie = {
         title: values.title || selected.title,
-        cover: values.cover || selected.cover,
+        cover: selected.cover,
         year: values.year || selected.year,
         rank: values.rank || selected.rank,
         type: values.type || selected.type,
@@ -146,23 +146,6 @@ export default function Edit({ selected, closeModals, setQuery, query }) {
                 placeholder="Title..."
                 defaultValue={selected.type}
                 onChange={(e) => setValues({ ...values, type: e.target.value })}
-              />
-            </div>
-
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
-                  Url
-                </span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Title..."
-                defaultValue={selected.cover}
-                onChange={(e) =>
-                  setValues({ ...values, cover: e.target.value })
-                }
               />
             </div>
 

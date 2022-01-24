@@ -9,7 +9,7 @@ import Edit from "../modals/Edit";
 const KEY = process.env.REACT_APP_API_KEY;
 
 export default function Home() {
-  const [query, setQuery] = useState("game of thr");
+  const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [fav, setFav] = useState([]);
@@ -20,7 +20,8 @@ export default function Home() {
   useEffect(() => {
     if (localStorage.getItem("q")) {
       setQuery(localStorage.getItem("q"));
-      localStorage.removeItem("q");
+    } else {
+      setQuery("game of thr");
     }
   }, []);
 
